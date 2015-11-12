@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static staticfiles sass_tags sekizai_tags %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>{% block title %}STAHLLABS.IO{% endblock %}</title>
+
+    <!-- dust.js needs to be in head -->
+    <script src="{% static 'bower_components/dustjs-linkedin/dist/dust-core.min.js' %}"></script>
+    <script src="{% static 'bower_components/dustjs-helpers/dist/dust-helpers.min.js' %}"></script>
+
+    {% addtoblock "css" %}
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans' type='text/css'>
+    <link rel="stylesheet" href="{% static 'fonts/foundation-icons.css' %}">
+    {% endaddtoblock %}
+    {% render_block "css" postprocessor "compressor.contrib.sekizai.compress" %}
+
+    <script type="text/javascript" src="{% static 'bower_components/foundation/js/vendor/modernizr.js' %}"></script>
+</head>
+<body>
+
+
+</body>
+</html>
