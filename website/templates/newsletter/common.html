@@ -1,0 +1,36 @@
+<!DOCTYPE html>{% load i18n static staticfiles sass_tags sekizai_tags %}
+<html lang="en">
+<head>
+    <title>{% block title %}{% trans "Newsletter" %}{% endblock title %}</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <link rel="stylesheet" href="{% static 'bower_components/foundation/css/foundation.css' %}">
+    {% block header %}{% endblock header %}
+</head>
+
+<script src="{% static 'bower_components/foundation/js/vendor/jquery.js' %}"></script>
+<script src="{% static 'bower_components/foundation/js/vendor/modernizr.js' %}"></script>
+<script src="{% static 'bower_components/foundation/js/foundation.min.js' %}"></script>
+
+
+
+<body>
+    <div class="row">
+        <div class="large-12 medium-12 small-12 centered columns text-center">
+            <hr />
+            <a href="/"><h4>SGMK Newsletter</h4></a>
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-5 large-centered columns text-center">
+            {% block body %}{% endblock body %}
+        </div>
+    </div>
+</body>
+
+
+<script>
+    $(document).foundation();
+</script>
+
+</html>
