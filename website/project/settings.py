@@ -56,7 +56,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.static',
     'django.core.context_processors.tz',
     'django.core.context_processors.request',
-    'sekizai.context_processors.sekizai'
+    'sekizai.context_processors.sekizai',
+     # enable messages
+    'django.contrib.messages.context_processors.messages',
 )
 
 ROOT_URLCONF = 'project.urls'
@@ -126,6 +128,13 @@ SASS_PROCESSOR_INCLUDE_DIRS = (
 
 SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, 'site-static')
 
+
+# messages
+from django.contrib.messages import constants as messages
+# override messsages tags for foundation.css
+MESSAGE_TAGS = {
+    messages.ERROR: 'alert',
+}
 
 LOGGING = {
     'version': 1,
