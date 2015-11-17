@@ -1,15 +1,14 @@
-{% load url from future %}++++++++++++++++++++
-
-{{ newsletter.title }}: {{ message.title }}
-
-++++++++++++++++++++
-
-{% for article in message.articles.all %}
+{% load url from future %}/{{ newsletter.title }}/{% for article in message.articles.all %}
 {{ article.title }}
-{{ article.text|striptags|safe }}
+{{ article.text|striptags|safe }}{% endfor %}
++++
 
-{% endfor %}
+This is an announcments mailing list for official sgmk events and things concerning the membership.
 
-++++++++++++++++++++
+Our mailing address is:
+/Schweizerische Gesellschaft für Mechatronische Kunst SGMK/
+/Hohlstrasse 52/
+/8004 Zürich/
+/Switzerland/
 
 Unsubscribe: http://{{ site }}{% url "newsletter_unsubscribe_request" newsletter.slug %}

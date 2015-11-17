@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
-   "http://www.w3.org/TR/html4/strict.dtd">
+ "http://www.w3.org/TR/html4/strict.dtd">
 
 <html lang="en">
 <head>
@@ -7,14 +7,18 @@
     <title>Unsubscription from {{ newsletter.title }}</title>
 </head>
 <body>
-Dear {{ subscription.name }},
+    {% if subscription.name and subscription.name.strip %}
+    Dear {{ subscription.name }},
+    {% else %}
+    Hi there,
+    {% endif %}
 
-you, or someone in your name requested unsubscription from {{ newsletter.title }}.
+    you, or someone in your name requested unsubscription from {{ newsletter.title }}.
 
-If you would like to confirm your unsubscription, please follow this activation link:
-http://{{ site.domain }}{{ subscription.unsubscribe_activate_url }}
+    If you would like to confirm your unsubscription, please follow this activation link:
+    http://{{ site.domain }}{{ subscription.unsubscribe_activate_url }}
 
-Kind regards,
-{{ newsletter.sender }}
+    Kind regards,
+    {{ newsletter.sender }}
 </body>
 </html>

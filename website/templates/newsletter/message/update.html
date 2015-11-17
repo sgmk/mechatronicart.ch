@@ -7,14 +7,23 @@
     <title>Update of subscription to {{ newsletter.title }}</title>
 </head>
 <body>
-Dear {{ subscription.name }},
+    <p>
+        {% if subscription.name and subscription.name.strip %}
+        Dear {{ subscription.name }},
+        {% else %}
+        Hi there,
+        {% endif %}
 
-you, or someone in your name requested updating your personal information for {{ newsletter.title }}.
+        you, or someone in your name requested updating your personal information for {{ newsletter.title }}.
 
-To make changes to your information in our database, please follow this activation link:
-http://{{ site.domain }}{{ subscription.update_activate_url }}
 
-Kind regards,
-{{ newsletter.sender }}
+        To make changes to your information in our database, please follow this activation link:
+
+        http://{{ site.domain }}{{ subscription.update_activate_url }}
+
+
+        Kind regards,
+        {{ newsletter.sender }}
+    </p>
 </body>
 </html>

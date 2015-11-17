@@ -1,4 +1,8 @@
+{% if subscription.name and subscription.name.strip %}
 Dear {{ subscription.name }},
+{% else %}
+Hi there,
+{% endif %}
 
 you, or someone in your name requested a subscription to {{ newsletter.title }}.
 
