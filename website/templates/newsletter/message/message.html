@@ -29,9 +29,9 @@
     </p>
     <ul style="margin-left:0; margin-top:20px; padding:0;">
         {% if submission.publish %}
-        <li style="list-style:none;"><a href="http://{{ site.domain }}{{ submission.get_absolute_url }}">Read message online</a></li>
+        <li style="list-style:none;margin-left:0;"><a href="http://{{ site.domain }}{{ submission.get_absolute_url }}">Read message online</a></li>
         {% endif %}
-        <li style="list-style:none;"><a href="http://{{ site.domain }}{% url "newsletter_unsubscribe_request" newsletter.slug %}">Unsubscribe</a></li>
+        <li style="list-style:none;margin-left:0;"><a href="http://{{ site.domain }}{% url "newsletter_unsubscribe_request" newsletter.slug %}">Unsubscribe</a></li>
     </ul>
 </body>
 </html>
